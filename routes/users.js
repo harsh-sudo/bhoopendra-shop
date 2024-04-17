@@ -4,7 +4,7 @@ const plm = require('passport-local-mongoose')
 // TODO: connect to mongoose
 
 
-mongoose.connect('mongodb://0.0.0.0/ecommerce')
+mongoose.connect('mongodb+srv://bhoopendra:bhoopendra999@bhoopendra.e2jrvmk.mongodb.net/shop?retryWrites=true&w=majority&appName=bhoopendra')
 
 const userSchema = mongoose.Schema({
   username: String,

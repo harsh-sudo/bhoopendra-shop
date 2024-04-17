@@ -231,7 +231,8 @@ router.get('/checkout', isloggedIn, async (req, res, next) => {
     }),
     price: userCart.price
   })
-  await newItems.populate('orderItems.product').execPopulate();
+  
+  newItems = await orderModel.findOne({_id: newItems._id}).populate('orderItems.product').exec();
 
   var options = {
     amount: newItems.price * 100,  // amount in the smallest currency unit
